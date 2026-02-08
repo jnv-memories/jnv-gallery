@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    background: var(--bg-main);
+    color: var(--text-main);
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  

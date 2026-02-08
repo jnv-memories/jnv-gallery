@@ -1,0 +1,36 @@
+.viewer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 6, 20, 0.6);
+    backdrop-filter: blur(var(--blur-strength));
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .viewer-content {
+    width: 90vw;
+    height: 90vh;
+    background: #000;
+    border-radius: 12px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  
+  .viewer-content iframe {
+    flex: 1;
+    width: 100%;
+    border: none;
+  }
+  
+  .viewer-filename {
+    padding: 0.6rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--violet);
+    background: rgba(0, 0, 0, 0.6);
+  }
+  

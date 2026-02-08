@@ -1,0 +1,22 @@
+:root {
+    --bg-main: #181d26;
+    --bg-panel: #32373c;
+    --violet: #a78bfa;
+    --text-main: #e5e5f0;
+    --blur-strength: 20px;
+  }
+  html,
+body,
+#root {
+  height: 100%;
+}
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-content {
+  flex: 1; /* pushes footer to bottom */
+}
