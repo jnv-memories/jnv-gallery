@@ -1,38 +1,50 @@
 .media-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.3rem;
-  }
-  
-/* Wrapper */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+/* Each card */
 .media-item {
-    cursor: pointer;
-    transition: transform 0.25s ease;
-  }
-  
-  /* Hover zoom */
-  .media-item:hover {
-    transform: scale(1.08);
-    z-index: 2;
-  }
-  
-  /* Thumbnail */
-  .media-item img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
-  }
-  
-  /* File name below thumbnail */
-  .media-name {
-    margin-top: 0.4rem;
-    font-size: 0.8rem;
-    color: #c4b5fd; /* soft violet */
-    text-align: center;
-  
-    /* handle long names */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  
+  cursor: pointer;
+  user-select: none;
+}
+.media-item:hover {
+  transform: scale(1.08);
+  z-index: 2;
+}
+
+/* Fixed-size thumbnail box */
+.thumbnail-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* square thumbnails */
+  background-color: #32373c;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Image itself */
+.thumbnail-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+/* When image loads */
+.thumbnail-wrapper img.loaded {
+  opacity: 1;
+}
+
+/* Filename */
+.media-name {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #e0e0e0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

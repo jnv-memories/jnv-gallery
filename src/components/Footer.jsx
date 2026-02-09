@@ -34,7 +34,7 @@ export default function Footer() {
           </a>
 
           <a
-            href="https://github.com/jnvmemories"
+            href="https://github.com/jnv-memories/jnv-gallery"
             target="_blank"
             rel="noopener noreferrer"
             title="GitHub"
