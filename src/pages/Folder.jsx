@@ -17,7 +17,7 @@ export default function Folder() {
 
   return (
     <div className="folder-page">
-      <h2>{folder.name}</h2>
+      <h2 className="album-heading">{folder.name}</h2>
 
       {/* thumbnails stay mounted */}
       <MediaGrid files={files} folder={folder} />

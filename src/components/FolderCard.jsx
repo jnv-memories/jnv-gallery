@@ -9,6 +9,7 @@ export default function FolderCard({ folder }) {
       className="folder-card"
       onClick={() => navigate(`/${folder.route}`)}
     >
+      <div className="folder-icon">📁</div>
       <div className="folder-name">{folder.name}</div>
     </div>
   );

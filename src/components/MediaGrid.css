@@ -4,6 +4,11 @@
   gap: 16px;
   padding: 16px;
 }
+@media (max-width: 700px) {
+  .media-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 /* Each card */
 .media-item {
@@ -11,7 +16,7 @@
   user-select: none;
 }
 .media-item:hover {
-  transform: scale(1.08);
+  transform: translateY(-4px) scale(1.05);
   z-index: 2;
 }
 
@@ -48,3 +53,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.load-more-trigger {
+  height: 1px;
+}
+

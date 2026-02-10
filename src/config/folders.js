@@ -1,5 +1,23 @@
 export const FOLDERS = [
   {
+    id: "1TOmHZ-tm1UpKpgbPwJOtcdXzpAwgsDJw",
+    name: "Fervel Photos Boys",
+    route: "fervel-photos-boys",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "17pjkXftv7QhPedtEEeIrkvssAbpfyxVO",
+    name: "Bio Wale Bacche",
+    route: "bio-wale-bacche",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1TSSe_bZ718tLbJQmhAUUAXk-95PuyYM1",
+    name: "Fervel Photos Girls",
+    route: "fervel-photos-girls",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
     id: "17qam-FuPTe2b-d51vXH8WNszDIOP47s8",
     name: "Trip to automotive",
     route: "trip-to-automotive",
@@ -7,7 +25,7 @@ export const FOLDERS = [
   },
   {
     id: "1-3PxfVTmfIv5PbKOF5kp8ZTg2A3Hw8x0",
-    name: "Teachers Day 2024 (Boys)",
+    name: "Teachers Day-24",
     route: "teachers-day-2024-boys",
     apiKey: import.meta.env.VITE_DRIVE_KEY_1
   },
@@ -91,13 +109,13 @@ export const FOLDERS = [
   },
   {
     id: "1Om8_ozZoCjUvEaHhrT40KBfBim3Y5ixd",
-    name: "Class 12 A Trip to NTL",
+    name: "Class 12A (NTL)",
     route: "class-12-a-trip-to-ntl",
     apiKey: import.meta.env.VITE_DRIVE_KEY_1
   },
   {
     id: "1PVdGQ0jDg0n44yxYrmm4SBD2Igykwih1",
-    name: "12 A to NTL (Squad)",
+    name: "12A to NTL (Squad)",
     route: "12-a-to-ntl-squad",
     apiKey: import.meta.env.VITE_DRIVE_KEY_1
   },
@@ -122,12 +140,7 @@ export const FOLDERS = [
 
   /* ---------- API KEY 2 ---------- */
 
-  {
-    id: "1TOmHZ-tm1UpKpgbPwJOtcdXzpAwgsDJw",
-    name: "Fervel Photos Boys",
-    route: "fervel-photos-boys",
-    apiKey: import.meta.env.VITE_DRIVE_KEY_2
-  },
+  
   {
     id: "1-0xRFLfYWsXIw9ssVp-vR-LGQFb4ZLXV",
     name: "26 Jan 2025",
@@ -136,7 +149,7 @@ export const FOLDERS = [
   },
   {
     id: "10mCdC2KKmJW7KPb2yy7zw9MbNL8rvHRq",
-    name: "26 Jan 2025 Bio ke Phone ki",
+    name: "26 Jan 25 (Bio)",
     route: "26-jan-2025-bio-phone",
     apiKey: import.meta.env.VITE_DRIVE_KEY_2
   },
@@ -148,28 +161,18 @@ export const FOLDERS = [
   },
   {
     id: "1IB105xzHePjL4GQQan_fhaUje9xwY9TH",
-    name: "Behind the Scene Videos",
+    name: "Behind the Scene",
     route: "behind-the-scenes",
     apiKey: import.meta.env.VITE_DRIVE_KEY_2
   },
-  {
-    id: "17pjkXftv7QhPedtEEeIrkvssAbpfyxVO",
-    name: "Bio Wale Bacche",
-    route: "bio-wale-bacche",
-    apiKey: import.meta.env.VITE_DRIVE_KEY_2
-  },
+  
   {
     id: "189dCB2YV1-uLChOgMwBQS9mloSGXVxuR",
     name: "Commerce Only",
     route: "commerce-only",
     apiKey: import.meta.env.VITE_DRIVE_KEY_2
   },
-  {
-    id: "1TSSe_bZ718tLbJQmhAUUAXk-95PuyYM1",
-    name: "Fervel Photos Girls",
-    route: "fervel-photos-girls",
-    apiKey: import.meta.env.VITE_DRIVE_KEY_2
-  },
+  
   {
     id: "19ZfJ2Uo_n_ExzwHpQiSoB61ZGhwVifJw",
     name: "Hindi Wale Bacche",

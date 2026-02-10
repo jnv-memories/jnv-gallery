@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="nav-title" onClick={() => navigate("/")}>
-        jnv
+        <h2>JNV</h2>
       </div>
     </nav>
   );

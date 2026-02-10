@@ -1,4 +1,14 @@
 .folder-page {
     padding: 2rem;
   }
-  
+  .album-heading {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #ff9966, #ff5e62);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #fff;
+  }

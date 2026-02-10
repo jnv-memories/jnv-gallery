@@ -1,35 +1,94 @@
 .footer {
-    margin-top: 1.5rem;             
-    padding: 1rem 0.05rem 0.05rem;  
-    background: #0c0718;
+  margin-top: 1.5rem;
+  padding: 1.2rem 1rem 0.6rem;
+  background: #0c0718;
+}
+
+/* ===== Top layout ===== */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* ===== About section (LEFT) ===== */
+.footer-about {
+  flex: 1;
+  min-width: 260px;
+  text-align: left;
+}
+
+.footer-about h2 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;   /* smaller heading */
+  font-weight: 600;
+  color: var(--violet);
+}
+
+.footer-about p {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  opacity: 0.85;
+  max-width: 420px;
+}
+
+/* ===== Contact section (RIGHT but visually centered) ===== */
+.footer-contact {
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+}
+
+.footer-contact h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.9rem;
+  color: var(--violet);
+}
+
+/* Icons slightly centered, not edge-aligned */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.social-icons img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.2s ease;
+}
+
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+
+/* ===== Bottom bar ===== */
+.footer-bottom {
+  margin-top: 1rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  font-size: 0.75rem;
+  opacity: 0.65;
+}
+
+/* ===== Mobile stacking ===== */
+@media (max-width: 640px) {
+  .footer-top {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .footer-about,
+  .footer-contact {
     text-align: center;
   }
-  
-  .footer-contact h3 {
-    margin: 0 0 0.6rem;
-    font-size: 0.95rem;             
-    color: var(--violet);
+
+  .footer-about p {
+    margin: 0 auto;
   }
-  
-  .social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 0.75rem;                   
-  }
-  
-  .social-icons img {
-    width: 28px;                    
-    height: 28px;
-    transition: transform 0.2s ease;
-  }
-  
-  .social-icons img:hover {
-    transform: scale(1.1);
-  }
-  
-  .footer-bottom {
-    margin-top: 0.6rem;           
-    font-size: 0.75rem;
-    opacity: 0.65;
-  }
-  
+}

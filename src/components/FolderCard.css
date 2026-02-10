@@ -1,18 +1,50 @@
+
 .folder-card {
-    background: var(--bg-panel);
-    padding: 2rem;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: transform 0.2s, background 0.2s;
-  }
-  
-  .folder-card:hover {
-    transform: scale(1.03);
-    background: #1a1030;
-  }
-  
-  .folder-name {
-    font-size: 1.1rem;
-    color: var(--violet);
-  }
-  
+  background-color: #32373c; /* bluish dark gray */
+  border-radius: 16px;
+  padding: 1.4rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+
+/* Hover effect */
+.folder-card:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
+  background-color: #3a4046;
+}
+
+/* Folder Icon */
+.folder-icon {
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+  user-select: none;
+}
+
+/* Folder Name */
+.folder-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f1f1f1;
+  text-align: center;
+  word-break: break-word;
+}
+
+
+.folder-card:active {
+  transform: scale(0.98);
+}
+
+
