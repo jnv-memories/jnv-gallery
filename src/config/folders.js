@@ -184,5 +184,120 @@ export const FOLDERS = [
     name: "Normal Photos 2",
     route: "normal-photos-2",
     apiKey: import.meta.env.VITE_DRIVE_KEY_2
-  }
+  },
+  /* ---------- API KEY 3 ---------- */
+
+  {
+  id: "1uoH9EoMnbdNpSFAJffWUY5gBFqEnRVk-",
+  name: "Dinesh",
+  route: "dinesh",
+  apiKey: import.meta.env.VITE_DRIVE_KEY_2
+},
+{
+  id: "1--SE_jX4xleEbCmXXwLFbqzJEzs3smnP",
+  name: "House Farewell",
+  route: "house-farewell",
+  apiKey: import.meta.env.VITE_DRIVE_KEY_2
+},
+{
+  id: "1-0ZCaxaphdzkGJh6Ja1saVixrEWfaYic",
+  name: "Last Food",
+  route: "last-food",
+  apiKey: import.meta.env.VITE_DRIVE_KEY_2
+},
+{
+  id: "18rXF4GUYTHJLpeaa53gAv9_WWdu7iNXs",
+  name: "Random Photos",
+  route: "random-photos",
+  apiKey: import.meta.env.VITE_DRIVE_KEY_2
+},
+{
+  id: "1MmZwmrXO1a8vmwjdYXitDQWTn4PAl1t2",
+  name: "TC Lene",
+  route: "tc-lene",
+  apiKey: import.meta.env.VITE_DRIVE_KEY_2
+},
+{
+  id: "1t4mCV7h4bFPOpmcPam5UTrZsSRQuN8tI",
+  name: "Name",
+  route: "name",
+  apiKey: import.meta.env.VITE_DRIVE_KEY_2
+},
+
+  /* ---------- API KEY 4 ---------- */
+
+  {
+    id: "1_QbM0W4HRGKrUai5Z0GtsCljdk0m_v6N",
+    name: "12th Last",
+    route: "12th-last",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1vQsAdVmjhP_rbtvtedVmVxhMLYCQ-XDl",
+    name: "Aravali Late Nights",
+    route: "aravali-late-nights",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1XS6QsyHjJYcUHQ1i4y6_FbdLNlozRLsq",
+    name: "Aravali Tales",
+    route: "aravali-tales",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "15kuA_AITIR-WoxLYEMV5yjxypxrFEWBf",
+    name: "12th A Moments",
+    route: "12th-a-moments",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1Rwv4qnlqzrllpVGOZRUt9QVWBDQQI9uF",
+    name: "Navodaya Diary",
+    route: "navodaya-diary",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1jOU3eqeuqHTtUBg0QAPI3xb-LnoOYGur",
+    name: "Navodaya Khel Utsav",
+    route: "navodaya-khel-utsav",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "18xbbVy9bfD6mTLlaPCUG3ZZqvq0uIRmw",
+    name: "Nostalgia",
+    route: "nostalgia",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1qwZ53FUqICN-ljQEtRWwuBZ1KEhLtV8F",
+    name: "Nostalgic Captures",
+    route: "nostalgic-captures",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1n3UGYeBcqTHA5-292XUW00CUefb6FbW0",
+    name: "Tata Visit",
+    route: "tata-visit",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1ojZ4t7Bon6UycCtxXw1nqxxWvRVFbgOJ",
+    name: "Teacher Day 2024",
+    route: "teacher-day-2024",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1H8A3nB_PxLZMS4_3tsh4byOPWljyS4RE",
+    name: "Yadgar Trip",
+    route: "yadgar-trip",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  },
+  {
+    id: "1B4HH621jEX4M3nOKn-Yweowfe3ZaPlfg",
+    name: "Yaro Me Bhai",
+    route: "yaro-me-bhai",
+    apiKey: import.meta.env.VITE_DRIVE_KEY_2
+  }  
+
 ];
+
