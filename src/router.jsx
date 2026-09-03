@@ -1,14 +1,16 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import Landing from "./pages/Landing";
+import Albums from "./pages/Albums";
 import Folder from "./pages/Folder";
 import Viewer from "./pages/Viewer";
 
-export default function Router() {
+export default function Router({ searchQuery }) {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Landing />} />
+      <Route path="/albums" element={<Albums searchQuery={searchQuery} />} />
 
-      <Route path="/:folderSlug" element={<Folder />}>
+      <Route path="/albums/:folderSlug" element={<Folder />}>
         <Route path=":fileId" element={<Viewer />} />
       </Route>
     </Routes>

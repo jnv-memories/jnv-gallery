@@ -7,10 +7,10 @@ export default function FolderCard({ folder }) {
   return (
     <div
       className="folder-card"
-      onClick={() => navigate(`/${folder.route}`)}
+      onClick={() => navigate(`/albums/${folder.route}`)}
       role="button"
       tabIndex={0}
-      onKeyDown={e => e.key === "Enter" && navigate(`/${folder.route}`)}
+      onKeyDown={e => e.key === "Enter" && navigate(`/albums/${folder.route}`)}
     >
       <div className="folder-icon">
         <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">

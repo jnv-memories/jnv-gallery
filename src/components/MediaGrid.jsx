@@ -18,50 +18,53 @@ export default function MediaGrid({ files, folder }) {
           );
         }
       },
-      {
-        root: null,
-        rootMargin: "300px",
-        threshold: 0
-      }
+      { root: null, rootMargin: "300px", threshold: 0 }
     );
 
-    if (loadMoreRef.current) {
-      observer.observe(loadMoreRef.current);
-    }
-
+    if (loadMoreRef.current) observer.observe(loadMoreRef.current);
     return () => observer.disconnect();
   }, [files.length]);
 
   return (
     <>
       <div className="media-grid">
-        {files.slice(0, visibleCount).map(file => (
-          <div
-            key={file.id}
-            className="media-item"
-            onClick={() =>
-              navigate(`/${folder.route}/${file.id}`)
-            }
-          >
-            <div className="thumbnail-wrapper">
-              <img
-                src={file.thumbnailLink}
-                alt={file.name}
-                loading="lazy"
-                onLoad={e =>
-                  e.currentTarget.classList.add("loaded")
-                }
-              />
-            </div>
+        {files.slice(0, visibleCount).map((file, idx) => {
+          const isVideo = file.mimeType?.startsWith("video/");
+          const isFeatured = idx === 0;
 
-            <div className="media-name" title={file.name}>
-              {file.name}
+          return (
+            <div
+              key={file.id}
+              className={[
+                "media-item",
+                isVideo ? "media-item--video" : "media-item--image",
+                isFeatured ? "media-item--featured" : ""
+              ].join(" ")}
+              onClick={() => navigate(`/albums/${folder.route}/${file.id}`)}
+            >
+              <div className="thumbnail-wrapper">
+                <img
+                  src={file.thumbnailLink}
+                  alt={file.name}
+                  loading={idx < 4 ? "eager" : "lazy"}
+                  onLoad={e => e.currentTarget.classList.add("loaded")}
+                />
+                {isVideo && (
+                  <div className="video-badge">
+                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+              <div className="media-name" title={file.name}>
+                {file.name}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
-      {/* 👇 observer trigger */}
       {visibleCount < files.length && (
         <div ref={loadMoreRef} className="load-more-trigger" />
       )}

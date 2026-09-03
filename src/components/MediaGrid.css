@@ -1,32 +1,45 @@
+/* ===== Grid layout ===== */
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 8px;
   padding: 0;
 }
 
 @media (min-width: 480px) {
   .media-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
   }
 }
 
 @media (min-width: 640px) {
   .media-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 12px;
   }
 }
 
 @media (min-width: 900px) {
   .media-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 14px;
   }
 }
 
-/* Card */
+@media (min-width: 1200px) {
+  .media-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* ===== Featured first item — spans 2 cols + 2 rows ===== */
+.media-item--featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* ===== Card base ===== */
 .media-item {
   cursor: pointer;
   user-select: none;
@@ -43,27 +56,49 @@
 
 .media-item:hover {
   border-color: var(--blue-bright);
-  box-shadow: 0 0 12px var(--blue-glow);
+  box-shadow: 0 0 14px var(--blue-glow);
   transform: translateY(-2px);
   z-index: 2;
 }
 
-/* Square thumbnail */
+.media-item:active {
+  transform: scale(0.98);
+}
+
+/* ===== Thumbnail wrapper ===== */
+/* Images: natural 4:3 landscape ratio */
+.media-item--image .thumbnail-wrapper {
+  aspect-ratio: 4 / 3;
+}
+
+/* Videos: 16:9 widescreen */
+.media-item--video .thumbnail-wrapper {
+  aspect-ratio: 16 / 9;
+  grid-column: span 2; /* videos always a bit wider */
+}
+
+/* Featured overrides — fill the larger cell naturally */
+.media-item--featured .thumbnail-wrapper {
+  aspect-ratio: unset;
+  height: 100%;
+  min-height: 0;
+}
+
 .thumbnail-wrapper {
   width: 100%;
-  aspect-ratio: 1 / 1;
   overflow: hidden;
   position: relative;
   background: var(--bg-surface);
 }
 
+/* ===== Image ===== */
 .thumbnail-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
   display: block;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.35s ease;
 }
 
 .thumbnail-wrapper img.loaded {
@@ -71,32 +106,10 @@
 }
 
 .media-item:hover .thumbnail-wrapper img {
-  transform: scale(1.04);
+  transform: scale(1.05);
 }
 
-/* Hover name overlay */
-.media-name {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0.5rem 0.5rem 0.4rem;
-  font-size: 0.72rem;
-  color: #fff;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  opacity: 0;
-  transition: opacity var(--transition);
-  pointer-events: none;
-}
-
-.media-item:hover .media-name {
-  opacity: 1;
-}
-
-/* Skeleton shimmer while loading */
+/* ===== Shimmer skeleton ===== */
 .thumbnail-wrapper::before {
   content: "";
   position: absolute;
@@ -109,9 +122,9 @@
   );
   background-size: 200% 100%;
   animation: shimmer 1.4s infinite;
+  z-index: 0;
 }
 
-.thumbnail-wrapper img.loaded ~ ::before,
 .thumbnail-wrapper:has(img.loaded)::before {
   display: none;
 }
@@ -121,6 +134,67 @@
   100% { background-position: -200% 0; }
 }
 
+/* ===== Video play badge ===== */
+.video-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(5, 10, 18, 0.72);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  pointer-events: none;
+  z-index: 2;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.video-badge svg {
+  width: 16px;
+  height: 16px;
+  margin-left: 2px; /* optical center for play icon */
+}
+
+.media-item:hover .video-badge {
+  background: var(--blue-mid);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* ===== Hover name overlay ===== */
+.media-name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem 0.6rem 0.45rem;
+  font-size: 0.72rem;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.78));
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.media-item:hover .media-name {
+  opacity: 1;
+}
+
+/* ===== Video items span 2 cols for their wider ratio ===== */
+.media-item--video:not(.media-item--featured) {
+  grid-column: span 2;
+}
+
+/* ===== Load more trigger ===== */
 .load-more-trigger {
   height: 1px;
+  grid-column: 1 / -1;
 }

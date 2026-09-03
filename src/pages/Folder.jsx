@@ -22,7 +22,7 @@ export default function Folder() {
 
   return (
     <div className="folder-page">
-      <button className="folder-back" onClick={() => navigate("/")}>
+      <button className="folder-back" onClick={() => navigate("/albums")}>
         ← All Albums
       </button>
 
