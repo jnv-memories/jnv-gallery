@@ -8,48 +8,99 @@
   border-bottom: 1px solid var(--blue-border);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0 1rem;
+  gap: 1rem;
+  padding: 0 1.25rem;
 }
 
 /* ===== Logo ===== */
 .nav-logo {
-  width: 34px;
-  height: 34px;
-  cursor: pointer;
   flex-shrink: 0;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: var(--blue-mid);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 9px;
-  transition: opacity var(--transition), transform var(--transition);
+  transition: background var(--transition), transform var(--transition);
+}
+
+.nav-logo span {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  user-select: none;
 }
 
 .nav-logo:hover {
-  opacity: 0.85;
+  background: var(--blue-bright);
   transform: scale(1.05);
 }
 
-.nav-logo svg {
-  width: 34px;
-  height: 34px;
-  display: block;
+/* ===== Center nav links ===== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 1;
 }
 
-/* ===== Search ===== */
+.nav-link {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  transition: color var(--transition), background var(--transition);
+  white-space: nowrap;
+}
+
+.nav-link:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link--active {
+  color: var(--blue-bright);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.nav-link--active:hover {
+  color: var(--blue-bright);
+  background: rgba(59, 130, 246, 0.15);
+}
+
+/* ===== Search — right side ===== */
 .nav-search {
-  flex: 1;
   position: relative;
   display: flex;
   align-items: center;
-  max-width: 480px;
+  width: 200px;
+  flex-shrink: 0;
+}
+
+@media (min-width: 640px) {
+  .nav-search {
+    width: 260px;
+  }
+}
+
+@media (max-width: 400px) {
+  .nav-search {
+    width: 140px;
+  }
 }
 
 .nav-search-icon {
   position: absolute;
   left: 0.65rem;
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   color: var(--text-muted);
   pointer-events: none;
   flex-shrink: 0;
@@ -60,8 +111,8 @@
   background: var(--bg-surface);
   border: 1px solid var(--blue-border);
   border-radius: 999px;
-  padding: 0.42rem 2.4rem 0.42rem 2.2rem;
-  font-size: 0.82rem;
+  padding: 0.4rem 2.2rem 0.4rem 2rem;
+  font-size: 0.8rem;
   color: var(--text-main);
   outline: none;
   transition: border-color var(--transition), box-shadow var(--transition);
@@ -80,7 +131,7 @@
 /* Clear button */
 .nav-search-clear {
   position: absolute;
-  right: 0.55rem;
+  right: 0.5rem;
   width: 18px;
   height: 18px;
   background: none;
@@ -95,40 +146,10 @@
 }
 
 .nav-search-clear svg {
-  width: 12px;
-  height: 12px;
+  width: 11px;
+  height: 11px;
 }
 
 .nav-search-clear:hover {
   color: var(--text-main);
-}
-
-/* ===== Home button ===== */
-.nav-home-btn {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  border: 1px solid var(--blue-border);
-  background: var(--bg-card);
-  color: var(--text-muted);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    background var(--transition),
-    border-color var(--transition),
-    color var(--transition);
-}
-
-.nav-home-btn svg {
-  width: 17px;
-  height: 17px;
-}
-
-.nav-home-btn:hover {
-  background: var(--bg-card-hover);
-  border-color: var(--blue-bright);
-  color: var(--blue-bright);
 }

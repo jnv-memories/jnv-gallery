@@ -64,7 +64,7 @@ export default function Landing() {
 
         {/* Hero content */}
         <div className="hero-content">
-          <div className="hero-badge">JNV Nainital · Batch 2018–25</div>
+          <div className="hero-badge">JNV Nainital · Memory Archive</div>
           <h1 className="hero-title">
             Our <span>Memories</span>,<br />Forever Preserved
           </h1>
@@ -116,8 +116,8 @@ export default function Landing() {
         </div>
         <div className="stat-divider" />
         <div className="stat">
-          <span className="stat-num">2018</span>
-          <span className="stat-label">Batch Year</span>
+          <span className="stat-num">4762+</span>
+          <span className="stat-label">Photos & Videos</span>
         </div>
         <div className="stat-divider" />
         <div className="stat">

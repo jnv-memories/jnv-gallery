@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar({ onSearch }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [query, setQuery] = useState("");
 
   function handleSearch(e) {
@@ -12,21 +13,40 @@ export default function Navbar({ onSearch }) {
     onSearch?.(val);
   }
 
+  function isActive(path) {
+    return location.pathname === path || location.pathname.startsWith(path + "/");
+  }
+
   return (
     <nav className="navbar">
-      {/* Logo only — no text */}
+      {/* Left: Logo */}
       <div className="nav-logo" onClick={() => navigate("/")} title="Home">
-        <svg viewBox="0 0 36 36" fill="none" aria-label="JNV Home">
-          {/* Camera lens shape */}
-          <rect width="36" height="36" rx="9" fill="#2563eb"/>
-          <circle cx="18" cy="19" r="7" stroke="#fff" strokeWidth="2.2" fill="none"/>
-          <circle cx="18" cy="19" r="3" fill="#93c5fd"/>
-          <rect x="11" y="9" width="6" height="3.5" rx="1.5" fill="#fff" opacity="0.9"/>
-          <rect x="25" y="10" width="3" height="3" rx="1" fill="#fff" opacity="0.6"/>
-        </svg>
+        <span>JN</span>
       </div>
 
-      {/* Search bar */}
+      {/* Center: Nav links */}
+      <div className="nav-links">
+        <button
+          className={`nav-link ${location.pathname === "/" ? "nav-link--active" : ""}`}
+          onClick={() => navigate("/")}
+        >
+          Home
+        </button>
+        <button
+          className={`nav-link ${isActive("/albums") ? "nav-link--active" : ""}`}
+          onClick={() => navigate("/albums")}
+        >
+          Albums
+        </button>
+        <button
+          className={`nav-link ${location.pathname === "/search" ? "nav-link--active" : ""}`}
+          onClick={() => navigate("/search")}
+        >
+          People
+        </button>
+      </div>
+
+      {/* Right: Search */}
       <div className="nav-search">
         <svg className="nav-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <circle cx="11" cy="11" r="8"/>
@@ -53,14 +73,6 @@ export default function Navbar({ onSearch }) {
           </button>
         )}
       </div>
-
-      {/* Home button */}
-      <button className="nav-home-btn" onClick={() => navigate("/")} title="Home" aria-label="Go to home">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H5a1 1 0 01-1-1V9.5z"/>
-          <polyline points="9 21 9 12 15 12 15 21"/>
-        </svg>
-      </button>
     </nav>
   );
 }
