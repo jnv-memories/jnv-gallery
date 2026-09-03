@@ -8,17 +8,21 @@ export default function ViewerControls({
 }) {
   return (
     <>
-      {/* Side nav arrows */}
-      <button className="viewer-arrow viewer-arrow--prev" onClick={onPrev} aria-label="Previous">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-      </button>
-      <button className="viewer-arrow viewer-arrow--next" onClick={onNext} aria-label="Next">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <polyline points="9 18 15 12 9 6" />
-        </svg>
-      </button>
+      {/* Side nav arrows — hidden when handler is null */}
+      {onPrev && (
+        <button className="viewer-arrow viewer-arrow--prev" onClick={onPrev} aria-label="Previous">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
+      )}
+      {onNext && (
+        <button className="viewer-arrow viewer-arrow--next" onClick={onNext} aria-label="Next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+      )}
 
       {/* Bottom toolbar */}
       <div className="viewer-controls">

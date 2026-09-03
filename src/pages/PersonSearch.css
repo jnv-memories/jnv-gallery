@@ -345,3 +345,17 @@
   text-overflow: ellipsis;
   background: var(--bg-card);
 }
+
+/* Actual loaded thumbnail */
+.ps-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.ps-thumb-img--loaded {
+  opacity: 1;
+}
