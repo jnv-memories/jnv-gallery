@@ -1,41 +1,67 @@
 .home {
-    padding: 3rem;
-  }
+  padding: 1.5rem 1rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .album-heading {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-top: -1rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(to right, #ff9966, #ff5e62);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    text-shadow: 1px 1px 0 #fff;
-  }
-  
-  
-/* ===== Folder Grid Layout ===== */
+/* Hero heading */
+.home-hero {
+  text-align: center;
+  padding: 2.5rem 1rem 2rem;
+}
+
+.home-hero h1 {
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.home-hero h1 span {
+  color: var(--blue-bright);
+}
+
+.home-hero p {
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Section label */
+.album-heading {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin: 0 0 1rem 0.25rem;
+}
+
+/* Folder grid */
 .folder-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 16px;
-  padding: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 12px;
 }
+
 @media (min-width: 480px) {
   .folder-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
   }
 }
 
-@media (min-width: 640px) {
-  .folder-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-  }
-}
-
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   .folder-grid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .folder-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
   }
 }

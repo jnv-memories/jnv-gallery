@@ -1,50 +1,57 @@
-
 .folder-card {
-  background-color: #32373c; /* bluish dark gray */
-  border-radius: 16px;
-  padding: 1.4rem 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  background: var(--bg-card);
+  border: 1px solid var(--blue-border);
+  border-radius: var(--radius-card);
+  padding: 1.2rem 0.75rem 1rem;
   cursor: pointer;
+  user-select: none;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.6rem;
 
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background-color 0.25s ease;
+    transform var(--transition),
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background var(--transition);
 }
 
-
-/* Hover effect */
-.folder-card:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.55);
-  background-color: #3a4046;
+.folder-card:hover,
+.folder-card:focus-visible {
+  transform: translateY(-3px);
+  background: var(--bg-card-hover);
+  border-color: var(--blue-bright);
+  box-shadow: 0 0 16px var(--blue-glow);
+  outline: none;
 }
-
-/* Folder Icon */
-.folder-icon {
-  font-size: 2.4rem;
-  margin-bottom: 0.6rem;
-  line-height: 1;
-  user-select: none;
-}
-
-/* Folder Name */
-.folder-name {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #f1f1f1;
-  text-align: center;
-  word-break: break-word;
-}
-
 
 .folder-card:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
 }
 
+/* SVG icon */
+.folder-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: var(--blue-bright);
+  flex-shrink: 0;
+}
 
+.folder-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Name */
+.folder-name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-main);
+  text-align: center;
+  line-height: 1.35;
+  word-break: break-word;
+  max-width: 100%;
+}

@@ -1,71 +1,126 @@
 .media-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 16px;
-  padding: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+  padding: 0;
 }
+
 @media (min-width: 480px) {
   .media-grid {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
   }
 }
 
 @media (min-width: 640px) {
   .media-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
   }
 }
 
 @media (min-width: 900px) {
   .media-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 14px;
   }
 }
 
-/* Each card */
+/* Card */
 .media-item {
   cursor: pointer;
   user-select: none;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid transparent;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    transform var(--transition);
 }
+
 .media-item:hover {
-  transform: translateY(-4px) scale(1.05);
+  border-color: var(--blue-bright);
+  box-shadow: 0 0 12px var(--blue-glow);
+  transform: translateY(-2px);
   z-index: 2;
 }
 
-/* Fixed-size thumbnail box */
+/* Square thumbnail */
 .thumbnail-wrapper {
   width: 100%;
-  aspect-ratio: 1 / 1; /* square thumbnails */
-  background-color: #32373c;
-  border-radius: 8px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
   position: relative;
+  background: var(--bg-surface);
 }
 
-/* Image itself */
 .thumbnail-wrapper img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: block;
 }
 
-/* When image loads */
 .thumbnail-wrapper img.loaded {
   opacity: 1;
 }
 
-/* Filename */
+.media-item:hover .thumbnail-wrapper img {
+  transform: scale(1.04);
+}
+
+/* Hover name overlay */
 .media-name {
-  margin-top: 6px;
-  font-size: 13px;
-  color: #e0e0e0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5rem 0.5rem 0.4rem;
+  font-size: 0.72rem;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  opacity: 0;
+  transition: opacity var(--transition);
+  pointer-events: none;
 }
+
+.media-item:hover .media-name {
+  opacity: 1;
+}
+
+/* Skeleton shimmer while loading */
+.thumbnail-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--bg-surface) 25%,
+    var(--bg-card-hover) 50%,
+    var(--bg-surface) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+}
+
+.thumbnail-wrapper img.loaded ~ ::before,
+.thumbnail-wrapper:has(img.loaded)::before {
+  display: none;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
 .load-more-trigger {
   height: 1px;
 }
-

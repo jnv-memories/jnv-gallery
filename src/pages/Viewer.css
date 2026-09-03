@@ -1,37 +1,46 @@
 .viewer-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(10, 6, 20, 0.55);
-  backdrop-filter: blur(18px);
+  background: rgba(2, 6, 12, 0.92);
+  backdrop-filter: blur(20px);
   z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  animation: fade-in 0.15s ease;
 }
 
-/* DEFAULT (video / iframe mode) */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Default mode (video/iframe) */
 .viewer-content {
-  width: 90vw;
-  height: 90vh;
+  width: 95vw;
+  height: 88vh;
   background: #000;
-  border-radius: 12px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--blue-border);
   position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-/* IMAGE MODE — shrink to image size */
+/* Image mode — wrap tightly around the image */
 .viewer-content.image-mode {
   width: auto;
   height: auto;
-  max-width: 95vw;
-  max-height: 95vh;
+  max-width: min(95vw, 960px);
+  max-height: 92vh;
   background: transparent;
+  border: none;
   overflow: visible;
 }
 
-/* iframe (videos, pdfs, etc.) */
+/* iframe */
 .viewer-content iframe {
   flex: 1;
   width: 100%;
@@ -39,25 +48,26 @@
   border: none;
 }
 
-/* IMAGE ITSELF */
+/* Image */
 .viewer-image {
-  max-width: 95vw;
-  max-height: 90vh;
+  display: block;
+  max-width: min(95vw, 960px);
+  max-height: 80vh;
   width: auto;
   height: auto;
   object-fit: contain;
-  display: block;
   border-radius: 10px;
+  box-shadow: 0 4px 40px rgba(0, 0, 0, 0.7);
 }
 
-/* filename */
+/* Filename pill */
 .viewer-filename {
-  margin-top: 8px;
+  margin-top: 0.6rem;
   text-align: center;
-  font-size: 0.9rem;
-  color: var(--violet);
-  background: rgba(0, 0, 0, 0.45);
-  padding: 0.5rem 0.8rem;
-  border-radius: 999px;
-  align-self: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 90vw;
 }

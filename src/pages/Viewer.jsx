@@ -14,7 +14,7 @@ export default function Viewer() {
 
   const isImage = file.mimeType?.startsWith("image/");
   const imageSrc = isImage
-    ? file.thumbnailLink?.replace(/=s\d+$/, "=s4800")
+    ? file.thumbnailLink?.replace(/=s\d+$/, "=s1600")
     : null;
 
   return (

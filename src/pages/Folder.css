@@ -1,14 +1,61 @@
 .folder-page {
-    padding: 2rem;
-  }
-  .album-heading {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-top: -1rem;
-    margin-bottom: 1rem;
-    background: linear-gradient(to right, #ff9966, #ff5e62);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: bold;
-    text-shadow: 1px 1px 0 #fff;
-  }
+  padding: 1.25rem 1rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Back button */
+.folder-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0 0 1rem;
+  transition: color var(--transition);
+}
+
+.folder-back:hover {
+  color: var(--blue-bright);
+}
+
+/* Album title */
+.album-heading {
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0 0 0.35rem;
+  letter-spacing: -0.3px;
+}
+
+.album-heading span {
+  color: var(--blue-bright);
+}
+
+/* Loading state */
+.folder-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  gap: 0.5rem;
+}
+
+.folder-loading::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--blue-border);
+  border-top-color: var(--blue-bright);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

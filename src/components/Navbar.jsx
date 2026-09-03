@@ -6,8 +6,12 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="nav-title" onClick={() => navigate("/")}>
-        <h2>JNV</h2>
+      <div className="nav-brand" onClick={() => navigate("/")}>
+        <div className="nav-logo">JN</div>
+        <div>
+          <div className="nav-title">JNV <span>Memories</span></div>
+          <div className="nav-subtitle">Nainital · Batch Archive</div>
+        </div>
       </div>
     </nav>
   );

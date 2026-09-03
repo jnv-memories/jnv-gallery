@@ -1,10 +1,32 @@
 :root {
-    --bg-main: #181d26;
-    --bg-panel: #32373c;
-    --violet: #a78bfa;
-    --text-main: #e5e5f0;
-    --blur-strength: 20px;
-  }
+  /* Backgrounds */
+  --bg-main: #050a12;
+  --bg-surface: #0d1520;
+  --bg-card: #0f1a2a;
+  --bg-card-hover: #152236;
+  --bg-overlay: rgba(5, 10, 18, 0.85);
+
+  /* Blue accent palette */
+  --blue-bright: #3b82f6;
+  --blue-mid: #2563eb;
+  --blue-dim: #1e40af;
+  --blue-glow: rgba(59, 130, 246, 0.35);
+  --blue-border: rgba(59, 130, 246, 0.2);
+
+  /* Text */
+  --text-main: #e2e8f0;
+  --text-muted: #64748b;
+  --text-accent: #93c5fd;
+
+  /* Misc */
+  --radius-card: 12px;
+  --radius-btn: 8px;
+  --blur-strength: 16px;
+  --transition: 0.2s ease;
+
+  /* Legacy alias so old --violet refs still work */
+  --violet: var(--blue-bright);
+}
   html,
 body,
 #root {
